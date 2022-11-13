@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+
+:root {
+  --primary-color: #c9d1d9;
+  --secondary-color: rgb(195, 141, 225);
+  --tertiary-color: rgb(160, 255, 148);
+  --bg-color: #222630;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+}
+
+body {
+  padding: 20px 30px;
+  margin: 0px;
+  font-size: 20px;
+  min-height: 200vh;
+  font-family: 'Cabin';
+  color: var(--primary-color);
+}
+
+h1,
+h2,
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  padding-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+li,
+p {
+  font-family:'Courier New', Courier, monospace;
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--secondary-color);
+  position: sticky;
+  color: var(--primary-color);
+  padding-bottom: 5px;
+  top: 10;
+  width: 100%;
+  background-color: var(--bg-color);
+}
+
+/* Nav menu */
+.nav {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+
+}
+.menu a {
+  display: block;
+  padding: 30px;
+  color: var(--primary-color);
+}
+.menu a:hover {
+  background-color: var(--secondary-color);
+}
+.nav {
+  max-height: 0;
+  transition: max-height .5s ease-out;
+}
+
+/* Menu Icon */
+.hamb {
+  cursor: pointer;
+  float: right;
+  padding: 40px 20px;
+}
+/* Style label tag */
+
+.hamb-line {
+  background: #c9d1d9;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 30px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after {
+  background: var(--primary-color);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.hamb-line::before{
+  top: 12px;
+}
+.hamb-line::after{
+  top: -12px;
+}
+
+.side-menu {
+  display: none;
+} /* Hide checkbox */
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav{
+  max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+  background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+  transform: rotate(-45deg);
+  top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+  transform: rotate(45deg);
+  top:0;
+}
+
+/* --------- mediaqueries for >768px devices ---------- */
+@media (min-width: 768px) {
+  .nav{
+      max-height: none;
+      top: 0;
+      position: relative;
+      float: right;
+      width: fit-content;
+  }
+  .menu li{
+      float: right;
+      
+  }
+  .menu a:hover{
+      background-color: var(--secondary-color);
+      color: var(--secondary-color);
+  }
+
+  .hamb{
+      display: none;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: baceline;
+    flex-wrap: nowrap;
+  }
+}
+
+/* --------- END mediaqueries for >768px devices ---------- */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 40px;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*------------- FORM --------------*/
+form {
+  /* Centrar el formulario en la página */
+  margin: 0 auto;
+  width: 400px;
+  /* Esquema del formulario */
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+}
+
+form ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+form li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  padding-bottom: 5px;
+}
+
+form li + li {
+  margin-top: 15px;
+}
+
+form label {
+  /* Tamaño y alineación uniforme */
+  display: block;
+  width: inherit;
+  text-align: left;
+}
+
+input,
+textarea {
+  /* Para asegurarse de que todos los campos de texto tienen la misma configuración de letra
+     Por defecto, las áreas de texto tienen un tipo de letra monoespaciada */
+  font: 16px 'Nunito';
+
+  /* Tamaño uniforme del campo de texto */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Hacer coincidir los bordes del campo del formulario */
+  border: 1px solid rgb(8, 3, 43);
+  border-radius: 2px;
+  padding: 5px;
+  color: #222630;
+}
+
+input:focus,
+textarea:focus {
+  /* Destacado adicional para elementos que tienen el cursor */
+  border-color: #000;
+}
+
+textarea {
+  /* Alinear los campos de texto multilínea con sus etiquetas */
+  vertical-align: top;
+
+  /* Proporcionar espacio para escribir texto */
+  height: 5em;
+}
+
+form button {
+  padding: 10px 40px;
+  border: 1px solid var(--tertiary-color);
+  border-radius: 4px;
+  font-family: 'Cabin';
+  font-size: 20px;
+  background-color: transparent;
+  color: var(--primary-color);
+}
+/* IDS styles */
+#about-me {
+max-width: 800px;
+}
+
+.footer {
+  position: sticky;
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: var(--bg-color);
+  margin-top: 40px;
+}
+
+.footer p {
+  padding: 0;
+}
+
+
