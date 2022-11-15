@@ -16,47 +16,68 @@
 <body>
 
   <header class="header">
-    <h1><a href="#" class="logo">Hi! 👋 <br> I'm Jesi Nugnez</a></h1>
-  
 
-  <!----- Hamburger icon ----->
-    <input class="side-menu" type="checkbox" id="side-menu"/>
-    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
-    <!-- Spread menu -->
-    <nav class="nav">
-      <ul class="menu">
-        <li><a href="#">About me</a></li>
-        <li><a href="#">Tech stack</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+    <h1 class="logo">Hi! 👋 <br> I'm Jesi Nugnez</h1>
+
+    <input id="toggle" type="checkbox"></input>
+
+    <label for="toggle" class="hamburger">
+      <div class="top-bun"></div>
+      <div class="meat"></div>
+      <div class="bottom-bun"></div>
+    </label>
+    
+    <div class="nav">
+      <div class="nav-wrapper">
+        <nav>
+          <a href="#">About me</a><br>
+          <a href="#">Tech Stack</a><br>
+          <a href="#">Contact</a><br>
+        </nav>
+      </div>
+    </div>
+
   </header>
 
   <main>
-    <div class="container">
+    <div class="main-container">
       <div class="section" id="about-me">
         <h2>About me</h2>
         <img src="img/back.jpg" alt="Picture of Jesi Nugnez, web developer" width="220" height="250">
-          <p>Hace 4 años, trabajando en Servicios Sociales como psicóloga, descubrí el impacto que la tecnología podía tener en la vida de la gente que atendía y de mis compañer@s. Ahi comenzó mi career shift...<br><br>
-            Pasé por roles funcionales, acompañando proyectos de digitalización, hasta perfiles de recruitment IT para algunas consultoras especializadas.
-            <br><br>En 2020 hice un bootcamp en UXUI, y en el marco del Design Thinking y el user-focus comencé a ver las piezas encajando con la idea de ser especialista en el problema y lo que lo compone.
+          <p>Hace 4 años, trabajando en Servicios Sociales como psicóloga, descubrí el impacto que la tecnología podía tener en la vida de la gente que atendía y de mis compañer@s. <br> Ahi comenzó mi career shift...<br><br>
+            <br>En 2020 hice un bootcamp en UXUI, y en el marco del Design Thinking y el user-focus comencé a ver las piezas encajando con la idea de ser especialista en el problema y lo que lo compone.
             Pero quería aprender a crear soluciones potentes y escalables. Asi me decidí a hacer el bootcamp en web development en Ironhack.
             Hoy estoy cursando mi segundo bootcamp en programación y desarrollo web, becada por Glovo en KeepCoding, y tengo claro que es sólo el comienzo.<br><br>
-            TO BE IMPROVED...
+            <strong>TO BE IMPROVED...</strong>
           </p>
       </div>
 
+
+      
       <div class="section" id="tech-stack">
         <h2>Tech stack</h2>
-        <ul class="tech-stack-bars">
-          <li>Javascript</li>
-          <li>UXUI</li>
-          <li>NodeJS</li>
-          <li>ReactJS</li>
-          <li>VueJS</li>
-        </ul>
+          <p>HTML</p>
+          <div class="container">
+            <div class="skills html">80%</div>
+          </div>
+          <p>UXUI</p>
+          <div class="container">
+            <div class="skills UXUI">40%</div>
+          </div>
+          <p>CSS</p>
+          <div class="container">
+            <div class="skills css">60%</div>
+          </div>
+          <p>Javascript</p>
+          <div class="container">
+            <div class="skills javascript">45%</div>
+          </div>
+          <p>ReactJS</p>
+          <div class="container">
+            <div class="skills ReactJS">40%</div>
+          </div>
       </div>
-      
+
       <div class="section" id="contact">
         <h2>Contact</h2>
         <ul class="tech-stack-bars">
@@ -83,16 +104,23 @@
         </li>
         <li>
           <label for="know-me">Cómo nos conocimos?</label>
-          <checkbox>university</checkbox>
+            <label for="university">University</label>
+            <input type="radio" value="university">
+            <label for="work">Work</label>
+            <input type="radio" value="work">
+            <label for="networking">Networking event</label>
+            <input type="radio" value="networking">
         </li>
         <li>
-          <label for="msg">Description</label>
-          <textarea id="msg" name="user_message"></textarea>
+          <label for="description">Description</label>
+          <textarea id="description" name="description"></textarea>
         </li>
+        <div class="button-container">
+          <button type="submit">Submit</button>
+        </div>
        </ul>
-       <li class="button">
-        <button type="submit">Submit</button>
-      </li>
+       
+
     </form>
   </main>
 

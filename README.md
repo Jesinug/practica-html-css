@@ -30,3 +30,6 @@ Crear un portfolio sobre nosotras con las siguientes secciones:
 
 Thanks for watching 💛 
 [@Jesinug](https://github.com/Jesinug)
+
+### Research notes
+La propiedad de CSS `filter`no fue aplicada por no ser soportada en Edge 12
