@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Cabin&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200&family=Cabin&display=swap');
 :root {
   --font-color: #c9d1d9;
   --bg-color: #222630;
@@ -10,6 +9,7 @@
 
 /* Reset */
 * {
+  border: 1px dashed red;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,13 +19,17 @@
 html {
   background-color: var(--bg-color);
   color: var(--font-color);
+  align-items: center;
 }
 
 body {
-  padding: 20px 30px;
-  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 30px 0px 30px;
   font-size: 20px;
   min-height: 200vh;
+  max-width: 700px;
   font-family: 'Cabin';
   font-weight: lighter;
   color: var(--font-color);
@@ -57,12 +61,13 @@ p, a {
 
 /* Header */
 header {
+  background-color: var(--bg-color);
   border-bottom: 3px solid var(--secondary-color);
   position: sticky;
-  padding-bottom: 5px;
+  padding-top: 30px;
   top: 0;
   width: 100%;
-  background-color: var(--bg-color);
+
 }
 
 .logo {
@@ -81,23 +86,25 @@ header {
   Hamburger
 **/
 .hamburger {
+  border: 1px dashed red;
   position: absolute;
   top: 55px;
   right: 5%;
+  padding-top: 20px;;
   margin-left: -2em;
-  margin-top: -45px;
   width: 2em;
   height: 45px;
   z-index: 5;
 }
 
 .hamburger div {
+  border: 1px dashed red;
   position: relative;
   width: 50px;
   height: 3px;
   border-radius: 3px;
   background-color: var(--primary-color);
-  margin-top: 12px;
+  margin-top: 15px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -105,6 +112,7 @@ header {
 Nav Styles
 **/
 .nav {
+  border: 1px dashed red;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -126,10 +134,11 @@ nav a {
   text-decoration: none;
   color: var(--tertiary-color);
   font-size: 20px;
-  display: inline;
+  display: flex;
+  justify-content: center;
   margin-top: 1.55em;
   transition: color 0.2s ease-in-out;
-  letter-spacing: 3px;
+  letter-spacing: 2.3px;
 }
 nav a:before {
   content: '';
@@ -168,8 +177,15 @@ Animations
 
 /* --------- mediaqueries for >768px devices ---------- */
 @media (min-width: 768px) {
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    border: 1px dashed yellow;
+  }
+
   .nav-wrapper {
-      max-height: none;
+      max-height: fit-content;
       top: 0;
       position: relative;
       float: right;
@@ -179,14 +195,14 @@ Animations
       float: right;
       
   }
-  .nav a:hover {
+  .nav a:hover { 
       border: var(--secondary-color) 1px solid;
       border-radius: 4px;
       font-weight: bolder;
   }
 
-  .hamburguer div {
-      display: none;
+  .hamburger {
+    display: none;
   }
 
   form
@@ -205,7 +221,7 @@ img {
   object-fit: cover;
   border: 4px solid var(--tertiary-color);
   border-radius: 20px;
-
+  z-index: index;
 }
 
 .section {
@@ -217,7 +233,13 @@ img {
   justify-content: space-around;
 }
 
-#tech-stack
+
+
+.contact-network {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 /*------------- FORM --------------*/
 form {
   margin: 0 auto;
